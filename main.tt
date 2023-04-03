@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>[% title %]</title>
+    </head>
+    <body>
+        <div>
+            <form action="search.pl">
+                <label for="address">Введите адрес получателя</label><br>
+                <input type="text" name="address" value="[% address %]">
+                <input type="submit" value="Искать">
+            </form>
+        </div>
+
+        <div>
+            <table>
+                [% FOREACH l IN log %]
+                    <tr>
+                        <td>[% l.created %]</td>
+                        <td>[% l.str %]</td>
+                    </tr>
+                [% END %]
+            </table>
+            [% limit_ex_message %]
+        </div>
+    </body>
+</html>
